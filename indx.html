@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Librería SRL</title>
+    <style>
+        /* Reset general */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos Generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #34495e;
+            line-height: 1.6;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #8f74f6; /* Nuevo color de fondo */
+            color: #ffffff;
+            padding: 30px 10px;
+            text-align: center;
+        }
+
+        header img {
+            width: 150px; /* Tamaño del logo */
+            height: auto;
+            margin-bottom: 10px;
+            max-width: 100%; /* Permite que el logo se ajuste al tamaño de pantalla */
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Menú lateral */
+        #menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            background-color: #6753d0; /* Nuevo color de fondo */
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+
+        #menu a {
+            padding: 8px 16px;
+            text-decoration: none;
+            font-size: 1.2em;
+            color: #fff;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        #menu a:hover {
+            background-color: #7b64e3; /* Nuevo color de hover */
+        }
+
+        #menu .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            color: #fff;
+        }
+
+        #menu a:first-child {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        /* Submenú Administración */
+        .submenu {
+            display: none;
+            margin-left: 20px;
+        }
+
+        .submenu a {
+            padding: 5px 20px;
+            font-size: 1.1em;
+        }
+
+        /* Estilo para el contenido principal */
+        .section-content {
+            padding: 30px;
+            margin-top: 40px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .section-content h2 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #5343bc; /* Nuevo color de encabezado */
+        }
+
+        /* Estilo para el iframe del catálogo */
+        #catalogo iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #8f74f6; /* Nuevo color de fondo */
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+
+        /* Media Queries - Responsividad */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .section-content h2 {
+                font-size: 2em;
+            }
+
+            footer p {
+                font-size: 1em;
+            }
+
+            #catalogo iframe {
+                height: 500px; /* Menor altura en móviles */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <img src="5Logo Quality.png" alt="Logo Quality Librería SRL">
+        <h1>Quality Librería SRL</h1>
+        <p>Proyecto Empresarial 2024</p>
+    </header>
+
+    <!-- Menú lateral -->
+    <span style="font-size:30px;cursor:pointer;color:#34495e;" onclick="openNav()">&#9776; Menú</span>
+
+    <div id="menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" onclick="showSection('administracion')">Administración</a>
+        <div id="administracion-submenu" class="submenu">
+            <a href="javascript:void(0)" onclick="showSection('fundamentacion')">Fundamentación</a>
+            <a href="javascript:void(0)" onclick="showSection('mision')">Misión</a>
+            <a href="javascript:void(0)" onclick="showSection('vision')">Visión</a>
+            <a href="javascript:void(0)" onclick="showSection('objetivos')">Objetivos</a>
+            <a href="javascript:void(0)" onclick="showSection('organigrama')">Organigrama</a>
+            <a href="javascript:void(0)" onclick="showSection('estrategias')">Estrategias</a>
+            <a href="javascript:void(0)" onclick="showSection('catalogo')">Catálogo</a>
+        </div>
+        <a href="javascript:void(0)" onclick="showSection('economia')">Economía</a>
+        <a href="javascript:void(0)" onclick="showSection('sistemaInformacionContable')">Sistema de Información Contable</a>
+        <a href="javascript:void(0)" onclick="showSection('recursosHumanos')">Recursos Humanos</a>
+    </div>
+
+    <!-- Contenido de las secciones -->
+    <section id="administracion" class="section-content">
+        <h2>Administración</h2>
+        <p>Selecciona una opción del submenú para ver más detalles.</p>
+    </section>
+
+    <section id="fundamentacion" class="section-content">
+        <h2>Fundamentación</h2>
+        <p>Aquí va el contenido de la fundamentación de la empresa...</p>
+    </section>
+
+    <section id="mision" class="section-content">
+        <h2>Misión</h2>
+        <p>La misión de la empresa es...</p>
+    </section>
+
+    <section id="vision" class="section-content">
+        <h2>Visión</h2>
+        <p>La visión de la empresa es...</p>
+    </section>
+
+    <section id="objetivos" class="section-content">
+        <h2>Objetivos</h2>
+        <p>Los objetivos de la empresa son...</p>
+    </section>
+
+    <section id="organigrama" class="section-content">
+        <h2>Organigrama</h2>
+        <p>El organigrama de la empresa está compuesto por...</p>
+    </section>
+
+    <section id="estrategias" class="section-content">
+        <h2>Estrategias</h2>
+        <p>Las estrategias de la empresa para 2024 son...</p>
+    </section>
+
+    <section id="catalogo" class="section-content">
+        <h2>Catálogo de Productos</h2>
+        <iframe src="https://drive.google.com/file/d/1kXTWLNqonr6s80_Eictq0wV1HCOnkPlh/preview" allow="autoplay"></iframe>
+    </section>
+
+    <section id="economia" class="section-content">
+        <h2>Economía</h2>
+        <p>En esta sección se detallará el análisis macroeconómico y la aplicación de las 3R en el proyecto...</p>
+    </section>
+
+    <section id="sistemaInformacionContable" class="section-content">
+        <h2>Sistema de Información Contable</h2>
+        <p>Aquí explicaremos el sistema utilizado para el registro y control de las operaciones contables de la empresa...</p>
+    </section>
+
+    <section id="recursosHumanos" class="section-content">
+        <h2>Recursos Humanos</h2>
+        <p>Esta sección se enfocará en la gestión de los recursos humanos dentro de la empresa...</p>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Quality Librería SRL | Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        // Función para abrir el menú lateral
+        function openNav() {
+            document.getElementById("menu").style.width = "250px";
+        }
+
+        // Función para cerrar el menú lateral
+        function closeNav() {
+            document.getElementById("menu").style.width = "0";
+        }
+
+        // Función para mostrar la sección seleccionada
+        function showSection(sectionId) {
+            // Ocultar todas las secciones
+            let sections = document.querySelectorAll('.section-content');
+            sections.forEach(section => section.style.display = 'none');
+
+            // Mostrar la sección seleccionada
+            let section = document.getElementById(sectionId);
+            section.style.display = 'block';
+
+            // Si la sección seleccionada es "Administración", mostrar el submenú
+            if (sectionId === 'administracion') {
+                document.getElementById('administracion-submenu').style.display = 'block';
+            } else {
+                document.getElementById('administracion-submenu').style.display = 'none';
+            }
+        }
+
+        // Por defecto, mostrar la primera sección
+        document.addEventListener("DOMContentLoaded", function() {
+            showSection('administracion');
+        });
+    </script>
+</body>
+</html>
